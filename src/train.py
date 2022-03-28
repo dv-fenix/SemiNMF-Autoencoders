@@ -17,7 +17,7 @@ import utils.opts as opts
 # ------------------ Training -------------------- #
 # Load Data
 def train(opt):
-    train_dataloader, test_set = get_dataloader(BATCH_SIZE=opt.batch_size, DIR=opt.src_dir)
+    train_dataloader, test_set = get_dataloader(BATCH_SIZE=opt.batch_size, syn=False, DIR=opt.src_dir)
 
     max_batches = len(train_dataloader)
 
@@ -77,16 +77,16 @@ def train(opt):
                   
                   e, y = model(img.float())
                   ab = e.detach().squeeze().T[i].reshape(95, 95).float()
-                  ab_y = torch.tensor(test_set.labels.T[0]).float()
-                  ab_y1 = torch.tensor(test_set.labels.T[1]).float()
-                  ab_y2 = torch.tensor(test_set.labels.T[2]).float()
-                  error1 =err(ab, ab_y)
+                  ab_y = torch.tensor(test_set.labels.T[0]).reshape(95, 95).float()
+                  ab_y1 = torch.tensor(test_set.labels.T[1]).reshape(95, 95).float()
+                  ab_y2 = torch.tensor(test_set.labels.T[2]).reshape(95, 95).float()
+                  error1 = err(ab, ab_y)
                   error1 = torch.sum(error1).float()
 
-                  error2 =err(ab, ab_y1)
+                  error2 = err(ab, ab_y1)
                   error2 = torch.sum(error2).float()
 
-                  error3 =err(ab, ab_y2)
+                  error3 = err(ab, ab_y2)
                   error3 = torch.sum(error3).float()
 
                   error_ = [error1.item(), error2.item(), error3.item()]
