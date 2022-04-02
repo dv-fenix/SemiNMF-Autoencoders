@@ -8,4 +8,4 @@ python -u ../src/extract.py\
 	-soft_threshold SReLU\
 	-activation Leaky-ReLU\
 	-gaussian_dropout 0.2\
-	-threshold 1.0\
+	-threshold 1.0

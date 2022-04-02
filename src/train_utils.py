@@ -106,11 +106,9 @@ def get_dataloader(BATCH_SIZE: int, syn: bool, DIR):
     # Load train data
     if syn:
         source_domain = Synthetic((2500, 5), (5, 200))
-        source_dataloader = torch.utils.data.DataLoader(source_domain, BATCH_SIZE,
-                                                        worker_init_fn=seed_worker(41))
+        source_dataloader = torch.utils.data.DataLoader(source_domain, BATCH_SIZE)
     else:    
         source_domain = Samson(root=DIR, transform=trans, target_transform=trans)
-        source_dataloader = torch.utils.data.DataLoader(source_domain, BATCH_SIZE,
-                                                        worker_init_fn=seed_worker(41))
+        source_dataloader = torch.utils.data.DataLoader(source_domain, BATCH_SIZE)
     
     return source_dataloader, source_domain
