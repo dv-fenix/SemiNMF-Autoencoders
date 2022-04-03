@@ -70,3 +70,15 @@ def train_opts(parser):
     choices=['MSE', 'SAD', 'SID'],
     help="Objective function used to train the Autoencoder."
          "Options are: [MSE|SAD|SID]")
+
+     group.add(
+        "--syn", "-syn",
+        action="store_true",
+        help="If passed, uses one of the Synthetic data classes.",
+     )
+
+     group.add(
+        "--semi", "-semi",
+        action="store_true",
+        help="If passed, uses the semi-synthetic dataset.",
+     )

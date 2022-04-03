@@ -7,7 +7,8 @@ python -u ../src/train.py\
 	-activation Leaky-ReLU\
 	-batch_size 20\
 	-learning_rate 1e-3\
-	-epochs 300\
+	-epochs 1000\
 	-gaussian_dropout 0.11\
 	-threshold 1.0\
-	-objective SAD >> ../logs/training_out.txt
+	-syn \ 
+	-objective MSE >> ../logs/training_out.txt
