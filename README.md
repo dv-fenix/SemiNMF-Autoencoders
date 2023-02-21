@@ -2,7 +2,7 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 ![build](https://img.shields.io/circleci/project/github/badges/shields/master)
 
-This repository contains the code for the experiments of the semi-NMF based regularization objective over the training of multiple autoencoder architectures for unsupervised hyperspectral unmixing. 
+This repository contains the code for the experiments of the semi-NMF based regularization objective over the training of multiple autoencoder architectures for unsupervised hyperspectral unmixing. Design of the semi-NMF objective can be found in `Algorithm.pdf`. The corresponding research paper will be made available on arXiv soon.
 
 ## Dependencies
 * __Docker 19.03.12__
