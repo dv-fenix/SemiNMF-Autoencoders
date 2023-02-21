@@ -67,6 +67,16 @@ class KKT(nn.Module):
     self.b = b
 
   def forward(self, model, X):
+    """ Loss function obtained upon solving the KKT conditions for the constrained Semi-NMF Objective
+    Note: Our paper will be made available on arXiv soon.
+
+    Params:
+        model -> the autoencoder
+        X -> Subsampled input Hyperspectral image (batch_size, num_bands)
+    
+    Returns:
+        corr_loss: loss computed as per the solution of the KKT conditions
+    """
     psi = torch.linalg.pinv(self.W)
     alpha_a = torch.mm(psi, X.T)
     alpha_b = torch.mv(psi, self.b).view(3, -1)
