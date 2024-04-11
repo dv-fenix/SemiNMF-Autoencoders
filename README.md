@@ -2,7 +2,7 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 ![build](https://img.shields.io/circleci/project/github/badges/shields/master)
 
-This repository contains the code for the experiments of the semi-NMF based regularization objective over the training of multiple autoencoder architectures for unsupervised hyperspectral unmixing. Design of the semi-NMF objective can be found in `Algorithm.pdf`. The corresponding research paper will be made available on arXiv soon.
+This repository contains the code for reproducing the experiments in [Semi-NMF Regularization-Based Autoencoder Training for Hyperspectral Unmixing](https://ieeexplore.ieee.org/abstract/document/10485752). Design of the semi-NMF objective can be found in `Algorithm.pdf`.
 
 ## Dependencies
 * __Docker 19.03.12__
@@ -71,18 +71,15 @@ Please ensure that the arguments contained within `extract.sh` match those used 
 sh extract.sh
 ```
 
-# References
-The autoencoders used in our experiments were first suggested in the following work.
+# Cite
+If you use this code, please cite our paper:
 ```
-@article{palsson2018hyperspectral,
-  title={Hyperspectral unmixing using a neural network autoencoder},
-  author={Palsson, Burkni and Sigurdsson, Jakob and Sveinsson, Johannes R and Ulfarsson, Magnus O},
-  journal={IEEE Access},
-  volume={6},
-  pages={25646--25656},
-  year={2018},
-  publisher={IEEE}
+@inproceedings{goel2024semi,
+  title={Semi-NMF Regularization-Based Autoencoder Training for Hyperspectral Unmixing},
+  author={Goel, Divyam and Khanna, Saurabh},
+  booktitle={2024 National Conference on Communications (NCC)},
+  pages={1--6},
+  year={2024},
+  organization={IEEE}
 }
 ```
-The code for the autoencoders was open-sourced earlier and can be found [here](https://github.com/dv-fenix/HyperspecAE).
-This repository uses a lot of the same code with changes made according to the required experimental configurations.
